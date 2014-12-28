@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("h1").hide(3000, function() {
+                    $("p").dblclick(function() {
+                        $("p").hide(3000, function() {
+                            $("h1").show();
+                            alert('Animation complete.');
+                        });
+                    });
+                });
+                $("#d").mouseenter(function(){
+                    alert("You have been warned!");
+                });
+                
+                $("#button1").click(function(){
+                $("#div1").fadeToggle(2000);
+                $("#div2").fadeToggle(3000);
+                $("#div3").fadeToggle(4000);
+              });
+              
+              $("#button2").click(function(){
+              $("#div4").animate({
+                  left:'250px',
+                  opacity:'0.5',
+                  height:'150px',
+                  width:'150px'
+                },5000).animate({
+                    left:'0px',
+                    opacity:'1',
+                    height:'50px',
+                    width:'50px'
+                },5000);
+              });
+            });
+            
+            
+            
+            
+            
+            
+        </script>
+    </head>
+    <body>
+
+        <h2>This is a heading</h2>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <button>Click me</button>
+        <h1>This is a heading</h1>
+        <h2 id="d">Restrict</h2>
+
+        
+        <p>Demonstrate fadeIn() with different parameters.</p>
+        <button id="button1">Click to fade in boxes</button>
+        <br><br>
+        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+        <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+        <button id="button2">Start Animation</button>
+        
+        <div id="div4" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+        </div>
+    </body>
+</html>
